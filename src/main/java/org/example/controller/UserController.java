@@ -2,7 +2,6 @@ package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.UserDto;
-import org.example.entity.UserEntity;
 import org.example.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,8 +44,8 @@ public class UserController {
         return service.searchUserById(id);
     }
 
-    @GetMapping("/search-by-name/{name}")
-    public UserDto searchUserByName(@PathVariable String name){
-        return service.searchUserByName(name);
+    @GetMapping("/search-by-name/{firstName}")
+    public UserDto searchUserByName(@PathVariable String firstName){
+        return service.searchUserByName(firstName);
     }
 }

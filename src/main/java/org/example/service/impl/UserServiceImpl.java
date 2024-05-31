@@ -1,12 +1,12 @@
-package org.example.service;
+package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.UserDto;
 import org.example.entity.UserEntity;
 import org.example.repository.UserRepository;
+import org.example.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +19,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addUser(UserDto userDto) {
         UserEntity entity = mapper.map(userDto,UserEntity.class);
-        repository.save(entity);
+        UserEntity savedEntity = repository.save(entity);
+        Long userId = savedEntity.getId();
+
     }
 
     @Override
@@ -64,7 +66,7 @@ public class UserServiceImpl implements UserService {
         return mapper.map(repository.findById(id),UserDto.class);
     }
 
-    public UserDto searchUserByName(String name) {
-        return mapper.map(repository.findByName(name),UserDto.class);
+    public UserDto searchUserByName(String firstName) {
+        return mapper.map(repository.findByFirstName(firstName),UserDto.class);
     }
 }

@@ -9,5 +9,5 @@ public interface UserService {
     boolean deleteUser(Long id);
     List<UserDto> getAllUser();
     UserDto searchUserById(Long id);
-    UserDto searchUserByName(String Name);
+    UserDto searchUserByName(String FirstName);
 }
