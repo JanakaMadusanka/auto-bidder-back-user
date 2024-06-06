@@ -16,7 +16,7 @@ import lombok.ToString;
 @Entity
 public class RoleEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Short id;
     private String name;
 }

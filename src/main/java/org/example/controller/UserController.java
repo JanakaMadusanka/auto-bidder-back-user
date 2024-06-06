@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.example.dto.UserDto;
 import org.example.service.UserService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

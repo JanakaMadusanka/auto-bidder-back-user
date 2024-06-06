@@ -18,6 +18,6 @@ public class UserRoleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long roleId;
+    private Short roleId;
     private Long userId;
 }

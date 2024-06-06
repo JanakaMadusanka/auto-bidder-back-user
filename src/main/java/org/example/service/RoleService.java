@@ -6,7 +6,9 @@ import java.util.List;
 public interface RoleService {
     void addRole(RoleDto roleDto);
     boolean updateRole(RoleDto roleDto);
-    boolean deleteRole(Long id);
+
+    boolean deleteRole(Short id);
+
     List<RoleDto> getAllRole();
-    RoleDto searchRoleById(Long id);
+    RoleDto searchRoleById(Short id);
 }

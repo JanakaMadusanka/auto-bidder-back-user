@@ -23,7 +23,7 @@ public class RoleServiceImpl implements RoleService {
     }
     @Override
     public boolean updateRole(RoleDto roleDto) {
-        Long roleId = roleDto.getId();
+        Short roleId = roleDto.getId();
         if (roleId != null){
             RoleEntity existingUser = repository.findById(roleId).orElse(null);
             if(existingUser !=null){
@@ -38,7 +38,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public boolean deleteRole(Long id) {
+    public boolean deleteRole(Short id) {
         if(repository.existsById(id)){
             repository.deleteById(id);
             return true;
@@ -59,7 +59,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public RoleDto searchRoleById(Long id) {
-        return mapper.map(repository.findById(Long.valueOf(id)),RoleDto.class);
+    public RoleDto searchRoleById(Short id) {
+        return mapper.map(repository.findById(id),RoleDto.class);
     }
 }

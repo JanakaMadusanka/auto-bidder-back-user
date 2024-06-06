@@ -12,6 +12,6 @@ import java.util.Set;
 @AllArgsConstructor
 @ToString
 public class RoleDto {
-    private Long id;
+    private Short id;
     private String name;
 }
