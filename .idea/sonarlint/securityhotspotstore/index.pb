@@ -7,5 +7,9 @@ S
 #src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-U
-%src/main/java/org/example/Config.java,2\0\20eaabf044c880158fec562e603561a3547cdb5d
+h
+8src/main/java/org/example/repository/UserRepository.java,6\a\6ac2338be643e4a3aa5f2a926e5f1909e7404f26
+Z
+*src/main/java/org/example/dto/RoleDto.java,5\b\5b9ce0973d5f10b570802544addd10b1387c6801
+^
+.src/main/java/org/example/dto/UserRoleDto.java,9\3\93a887f97dd63eff00cb72a6496cb70350fef987

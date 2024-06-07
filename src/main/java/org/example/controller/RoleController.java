@@ -5,7 +5,7 @@ import org.example.dto.RoleDto;
 import org.example.service.RoleService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/role")
 @RequiredArgsConstructor
