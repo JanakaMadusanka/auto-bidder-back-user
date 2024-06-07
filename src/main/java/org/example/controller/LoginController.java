@@ -2,7 +2,6 @@ package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.LoginDto;
-import org.example.dto.UserDto;
 import org.example.service.LoginService;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,10 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.example.dto.LoginDto;
 import org.example.dto.UserDto;
+import org.example.service.LoginService;
+import org.example.service.UserRoleService;
 import org.example.service.UserService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -11,9 +14,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     final UserService service;
+    final LoginService loginService;
+    final UserRoleService userRoleService;
     @PostMapping("/register")
     public void registerUser(@RequestBody UserDto userDto){
-        service.addUser(userDto);
+        Long userId = service.addUser(userDto);
+        loginService.insertLoginData(new LoginDto(userId, userDto.getEmail(),userDto.getPassword()));
+        userRoleService.insertUserRoleData(userId, userDto.getUserRole());
     }
 
     @PutMapping("/update/{id}")

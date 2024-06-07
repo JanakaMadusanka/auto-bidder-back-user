@@ -2,16 +2,13 @@ package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.UserDto;
-import org.example.entity.RoleEntity;
 import org.example.entity.UserEntity;
-import org.example.entity.UserRoleEntity;
 import org.example.repository.RoleRepository;
 import org.example.repository.UserRepository;
 import org.example.repository.UserRoleRepository;
 import org.example.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
 import java.util.*;
 
 @RequiredArgsConstructor
@@ -23,26 +20,10 @@ public class UserServiceImpl implements UserService {
     final ModelMapper mapper;
 
     @Override
-    public void addUser(UserDto userDto) {
+    public Long addUser(UserDto userDto) {
         UserEntity entity = mapper.map(userDto,UserEntity.class);
         UserEntity savedEntity = repository.save(entity);
-        Long userId = savedEntity.getId();
-
-        Set<UserRoleEntity> userRoles = new HashSet<>();
-        for (Short roleId : userDto.getUserRole()) {
-            Optional<RoleEntity> roleEntityOptional = roleRepository.findById(roleId);
-            if (roleEntityOptional.isPresent()) {
-                RoleEntity roleEntity = roleEntityOptional.get(); // Unwrap the Optional
-                UserRoleEntity userRoleEntity = new UserRoleEntity();
-                userRoleEntity.setRoleId(roleEntity.getId());
-                userRoleEntity.setUserId(userId);
-                userRoles.add(userRoleEntity);
-            }
-        }
-
-        userRoleRepository.saveAll(userRoles); // Save user roles
-
-
+        return (savedEntity.getId());
     }
 
     @Override
