@@ -17,10 +17,14 @@ public class UserController {
     final LoginService loginService;
     final UserRoleService userRoleService;
     @PostMapping("/register")
-    public void registerUser(@RequestBody UserDto userDto){
-        Long userId = service.addUser(userDto);
-        loginService.insertLoginData(new LoginDto(userId, userDto.getEmail(),userDto.getPassword()));
-        userRoleService.insertUserRoleData(userId, userDto.getUserRole());
+    public boolean registerUser(@RequestBody UserDto userDto){
+        boolean isExistUser = loginService.isExistUser(userDto);
+        if(!isExistUser) {
+            Long userId = service.addUser(userDto);
+            loginService.insertLoginData(new LoginDto(userId, userDto.getEmail(), userDto.getPassword()));
+            userRoleService.insertUserRoleData(userId, userDto.getUserRole());
+        }
+        return isExistUser;
     }
 
     @PutMapping("/update/{id}")
@@ -48,10 +52,5 @@ public class UserController {
     @GetMapping("/search-by-id/{id}")
     public UserDto searchUserById(@PathVariable Long id){
         return service.searchUserById(id);
-    }
-
-    @GetMapping("/search-by-name/{firstName}")
-    public UserDto searchUserByName(@PathVariable String firstName){
-        return service.searchUserByName(firstName);
     }
 }

@@ -13,8 +13,8 @@ public class LoginController {
     final LoginService service;
 
     @PostMapping("/request")
-    public void validateLogin(@RequestBody LoginDto loginDto){
-        service.validateLogin(loginDto);
+    public boolean validateLogin(@RequestBody LoginDto loginDto){
+        return  service.validateLogin(loginDto);
     }
 
 }
