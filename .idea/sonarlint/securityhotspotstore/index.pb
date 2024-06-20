@@ -9,8 +9,6 @@ h
 8src/main/java/org/example/controller/RoleController.java,b\7\b73aed8da0b032cecf54d91f7df177065fd6c65e
 Z
 *src/main/java/org/example/dto/RoleDto.java,5\b\5b9ce0973d5f10b570802544addd10b1387c6801
-Z
-*src/main/java/org/example/dto/UserDto.java,b\c\bc8277d6d516b74ba3dbee1f139d91095458deda
 ^
 .src/main/java/org/example/dto/UserRoleDto.java,9\3\93a887f97dd63eff00cb72a6496cb70350fef987
 `
@@ -29,3 +27,7 @@ S
 #src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
 o
 ?src/main/java/org/example/service/impl/UserRoleServiceImpl.java,2\3\2363ed57a4c5ebcc16ef1a0e0ad72b62aaea948d
+[
++src/main/java/org/example/dto/LoginDto.java,4\2\42c535db3d327b86b7dbfa4eba91ff76ee11cc9a
+i
+9src/main/java/org/example/controller/LoginController.java,4\1\41df90906aa86c82e7377516736ddb118352030d
