@@ -8,4 +8,5 @@ public interface UserService {
     boolean deleteUser(Long id);
     List<UserDto> getAllUser();
     UserDto searchUserById(Long id);
+    UserDto searchByEmail(String email);
 }

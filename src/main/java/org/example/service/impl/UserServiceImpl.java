@@ -2,10 +2,12 @@ package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.UserDto;
+import org.example.entity.LoginEntity;
 import org.example.entity.UserEntity;
 import org.example.repository.RoleRepository;
 import org.example.repository.UserRepository;
 import org.example.repository.UserRoleRepository;
+import org.example.service.LoginService;
 import org.example.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ public class UserServiceImpl implements UserService {
     final UserRepository repository;
     final UserRoleRepository userRoleRepository;
     final RoleRepository roleRepository;
+    final LoginService loginService;
     final ModelMapper mapper;
 
     @Override
@@ -66,5 +69,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto searchUserById(Long id) {
         return mapper.map(repository.findById(id),UserDto.class);
+    }
+
+    @Override
+    public UserDto searchByEmail(String email) {
+        LoginEntity loginEntity = loginService.searchByEmail(email);
+        Long userId = loginEntity.getUserId();
+        return mapper.map(repository.findById(userId),UserDto.class);
     }
 }

@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface LoginRepository extends CrudRepository<LoginEntity,Long> {
     Boolean existsByEmailAndPassword(String email, String password);
     Boolean existsByEmail(String email);
+    LoginEntity searchByEmail(String email);
 }

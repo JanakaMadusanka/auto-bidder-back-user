@@ -5,8 +5,6 @@ S
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-h
-8src/main/java/org/example/controller/RoleController.java,b\7\b73aed8da0b032cecf54d91f7df177065fd6c65e
 Z
 *src/main/java/org/example/dto/RoleDto.java,5\b\5b9ce0973d5f10b570802544addd10b1387c6801
 ^
@@ -15,8 +13,6 @@ Z
 0src/main/java/org/example/entity/RoleEntity.java,1\a\1a391127deb189f0678f4664fe7ae80ff6a8a694
 d
 4src/main/java/org/example/entity/UserRoleEntity.java,a\3\a3cf67acbdb7701df91f00decb5b847ce453e132
-k
-;src/main/java/org/example/service/impl/RoleServiceImpl.java,0\3\032aae94454cb9205dd1d4202b52913e8fd38dc7
 b
 2src/main/java/org/example/service/RoleService.java,0\b\0b91d214c43314b16335935c7bfc419f1b7f6ebc
 f
@@ -25,9 +21,3 @@ U
 %src/main/java/org/example/Config.java,2\0\20eaabf044c880158fec562e603561a3547cdb5d
 S
 #src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
-o
-?src/main/java/org/example/service/impl/UserRoleServiceImpl.java,2\3\2363ed57a4c5ebcc16ef1a0e0ad72b62aaea948d
-[
-+src/main/java/org/example/dto/LoginDto.java,4\2\42c535db3d327b86b7dbfa4eba91ff76ee11cc9a
-i
-9src/main/java/org/example/controller/LoginController.java,4\1\41df90906aa86c82e7377516736ddb118352030d

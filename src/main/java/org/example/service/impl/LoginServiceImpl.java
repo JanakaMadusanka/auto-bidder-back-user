@@ -25,4 +25,8 @@ public class LoginServiceImpl implements LoginService {
     public boolean isExistUser(UserDto userDto) {
         return repository.existsByEmail(userDto.getEmail());
     }
+
+    public LoginEntity searchByEmail(String email){
+        return repository.searchByEmail(email);
+    }
 }

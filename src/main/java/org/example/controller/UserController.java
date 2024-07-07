@@ -53,4 +53,9 @@ public class UserController {
     public UserDto searchUserById(@PathVariable Long id){
         return service.searchUserById(id);
     }
+
+    @GetMapping("/search-by-email/{email}")
+    public UserDto searchUserByEmail(@PathVariable String email){
+        return service.searchByEmail(email);
+    }
 }
