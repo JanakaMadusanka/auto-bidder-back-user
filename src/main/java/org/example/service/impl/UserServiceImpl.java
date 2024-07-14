@@ -2,12 +2,14 @@ package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.UserDto;
+import org.example.dto.UserRoleDto;
 import org.example.entity.LoginEntity;
 import org.example.entity.UserEntity;
 import org.example.repository.RoleRepository;
 import org.example.repository.UserRepository;
 import org.example.repository.UserRoleRepository;
 import org.example.service.LoginService;
+import org.example.service.UserRoleService;
 import org.example.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,7 @@ public class UserServiceImpl implements UserService {
     final UserRoleRepository userRoleRepository;
     final RoleRepository roleRepository;
     final LoginService loginService;
+    final UserRoleService userRoleService;
     final ModelMapper mapper;
 
     @Override
@@ -73,8 +76,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto searchByEmail(String email) {
+
+        //get user details and map to userDto
         LoginEntity loginEntity = loginService.searchByEmail(email);
         Long userId = loginEntity.getUserId();
-        return mapper.map(repository.findById(userId),UserDto.class);
+        UserDto userDto = mapper.map(repository.findById(userId),UserDto.class);
+
+        //get userRoleDto list of the user
+        List<UserRoleDto> userRoleDtoList = userRoleService.searchByEmail(email);
+        //converting the list to a set
+        Set<Short> userRoleSet = new HashSet<>();
+        for (UserRoleDto userRoleDto : userRoleDtoList) {
+            userRoleSet.add(userRoleDto.getRoleId());
+        }
+        //set userRoleSet to userDto
+        userDto.setUserRole(userRoleSet);
+        return userDto;
     }
+
 }

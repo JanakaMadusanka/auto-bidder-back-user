@@ -2,6 +2,7 @@ package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.RoleDto;
+import org.example.dto.UserRoleDto;
 import org.example.service.RoleService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -39,7 +40,7 @@ public class RoleController {
     }
 
     @GetMapping("/search-by-id/{id}")
-    public RoleDto searchUserById(@PathVariable Short id){
+    public RoleDto searchUserRoleById(@PathVariable Short id){
         return service.searchRoleById(id);
     }
 }

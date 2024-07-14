@@ -3,11 +3,15 @@ package org.example.controller;
 import lombok.RequiredArgsConstructor;
 import org.example.dto.LoginDto;
 import org.example.dto.UserDto;
+import org.example.dto.UserRoleDto;
+import org.example.entity.UserRoleEntity;
 import org.example.service.LoginService;
 import org.example.service.UserRoleService;
 import org.example.service.UserService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Set;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/user")
@@ -58,4 +62,5 @@ public class UserController {
     public UserDto searchUserByEmail(@PathVariable String email){
         return service.searchByEmail(email);
     }
+
 }

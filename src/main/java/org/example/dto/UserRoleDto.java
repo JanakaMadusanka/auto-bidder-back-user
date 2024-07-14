@@ -12,6 +12,6 @@ import lombok.ToString;
 @ToString
 public class UserRoleDto {
     private Long id;
-    private Long roleId;
+    private Short roleId;
     private Long userId;
 }
