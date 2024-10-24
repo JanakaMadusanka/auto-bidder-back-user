@@ -2,7 +2,6 @@ package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.RoleDto;
-import org.example.dto.UserRoleDto;
 import org.example.service.RoleService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 public class RoleController {
     final RoleService service;
     @PostMapping("/register")
-    public void registerUser(@RequestBody RoleDto roleDto){
+    public void registerRole(@RequestBody RoleDto roleDto){
         service.addRole(roleDto);
     }
 

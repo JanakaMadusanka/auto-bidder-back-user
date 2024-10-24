@@ -2,7 +2,6 @@ package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.UserRoleDto;
-import org.example.entity.LoginEntity;
 import org.example.entity.UserRoleEntity;
 import org.example.repository.RoleRepository;
 import org.example.repository.UserRoleRepository;
