@@ -16,5 +16,4 @@ public class LoginController {
     public boolean validateLogin(@RequestBody LoginDto loginDto){
         return  service.validateLogin(loginDto);
     }
-
 }

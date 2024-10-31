@@ -59,5 +59,4 @@ public class UserController {
     public UserDto searchUserByEmail(@PathVariable String email){
         return service.searchByEmail(email);
     }
-
 }
